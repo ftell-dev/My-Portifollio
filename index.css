@@ -1,0 +1,383 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    height: 100vh;      
+    overflow: hidden;       
+
+    background:
+        radial-gradient(circle at 20% 20%, #3a3a3a, transparent 40%),
+        radial-gradient(circle at 80% 30%, #2a2a2a, transparent 45%),
+        radial-gradient(circle at bottom, #111, #000 70%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    letter-spacing: 3px;
+    font-size: 42px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    opacity: 0.7;
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.site {
+    width: 100%;
+    max-width: 520px;      
+    max-height: 85vh;    
+    
+    position: relative;
+    overflow: hidden;
+
+    padding: 34px;
+    border-radius: 16px;
+
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.08),
+        rgba(255,255,255,0.02)
+    );
+
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.7),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+
+.menu {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.panel {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;     
+    overflow-x: hidden;
+
+    padding: 22px 30px 30px;
+
+    background: linear-gradient(180deg,#1b1b1b,#101010);
+    border-radius: 20px;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.95);
+    transition: .4s;
+}
+
+
+.panel.active{
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+}
+
+.menu button, .menu a {
+     padding: 14px 26px;
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.12);
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    cursor: pointer;
+
+    transition: 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+.menu button:hover, .menu a:hover {
+        background: rgba(255,255,255,0.22);
+    transform: translateY(-3px) scale(1.04);
+}
+
+a {
+    text-decoration: none;
+}
+
+.backBtn {
+    width: 44px;
+    height: 44px;
+    padding: 0;                 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    background: rgba(255,255,255,0.12);
+    color: white;
+    cursor: pointer;
+}
+
+.backBtn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.12);
+}
+
+.panel {
+    position: absolute;
+    inset: 0;
+    padding: 22px 30px 30px 30px;
+    background: linear-gradient(180deg,#1b1b1b,#101010);
+    border-radius: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.95);
+    transition: .4s;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.panel.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+}
+
+.panelHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(180deg,#1b1b1b,#101010);
+    padding-bottom: 10px;
+    z-index: 2;
+}
+
+.panelHeader h3 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+button {
+    padding: 14px 28px;
+    font-weight: 400;
+}
+
+.socialList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    flex: 1;             
+    min-height: 0;       
+}
+
+
+.socialBtn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    transition: 0.35s;
+}
+
+.socialBtn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(180deg,rgba(255,255,255,0.22),rgba(255,255,255,0.06));
+}
+
+.socialBtn span {
+    font-size: 20px;
+}
+
+.github:hover {
+    box-shadow: 0 0 0 1px #ffffff55 inset;
+}
+
+.linkedin:hover {
+    box-shadow: 0 0 0 1px #0a66c255 inset;
+}
+
+.instagram:hover {
+    box-shadow: 0 0 0 1px #e1306c55 inset;
+}
+
+.email:hover {
+    box-shadow: 0 0 0 1px #00c85355 inset;
+}
+
+
+.socialList img {
+    width: 28px;
+    height: 28px;
+}
+
+.socialList strong {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.socialList small {
+    opacity: 0.7;
+    font-size: 13px;
+}
+
+.panel::-webkit-scrollbar {
+    width: 10px;
+}
+
+.panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.panel::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.25),
+        rgba(255,255,255,0.08)
+    );
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.panel::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.45),
+        rgba(255,255,255,0.18)
+    );
+}
+
+.aboutHeader {
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: center;
+    width: 100%;
+}
+
+.aboutHeader .backBtn {
+    justify-self: center;
+}
+
+.progressDots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.progressDots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    transition: .3s;
+}
+
+.progressDots span.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+.aboutSlider {
+    position: relative;
+}
+
+.aboutSlide {
+    display: none;
+    animation: fade .35s ease;
+}
+
+.aboutSlide.active {
+    display: block;
+}
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(8px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.aboutNav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.aboutNav button {
+    padding: 14px 26px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.12);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.15);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.aboutNav button:hover {
+    background: rgba(255,255,255,0.22);
+    transform: translateY(-3px) scale(1.04);
+}
+
+.aboutNav button:disabled {
+    opacity: .35;
+    cursor: default;
+    transform: none;
+}
+
+.toolList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.toolCard {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    transition: .3s;
+}
+
+.toolCard:hover {
+    transform: translateY(-3px);
+}
+
+.toolCard.java { background: linear-gradient(180deg,#ff6a0033,#ff000022); }
+.toolCard.html { background: linear-gradient(180deg,#ff572233,#ff980022); }
+.toolCard.css  { background: linear-gradient(180deg,#2196f333,#03a9f422); }
+.toolCard.js   { background: linear-gradient(180deg,#ffd60033,#ffea0022); }
+
+.toolList i {
+    width: 28px;
+    font-size: 28px;
+}
