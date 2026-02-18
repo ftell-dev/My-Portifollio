@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ftell Dev's</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -37,22 +37,22 @@
         <h3>Which tools I work with?</h3>
 
         <div class="toolList">
-            <div class="toolCard java">
+            <div class="toolCard java" data-tool="java">
                 <i class="devicon-java-plain"></i>
                 <strong>Java</strong>
             </div>
 
-            <div class="toolCard html">
+            <div class="toolCard html" data-tool="html">
                 <i class="devicon-html5-plain"></i>
                 <strong>HTML</strong>
             </div>
 
-            <div class="toolCard css">
+            <div class="toolCard css" data-tool="css">
                 <i class="devicon-css3-plain"></i>
                 <strong>CSS</strong>
             </div>
 
-            <div class="toolCard js">
+            <div class="toolCard js" data-tool="js">
                 <i class="devicon-javascript-plain"></i>
                 <strong>JavaScript</strong>
             </div>
@@ -62,14 +62,23 @@
     <div class="aboutSlide">
         <h3>My Skills</h3>
         <h4>Soft Skills</h4>
-        <p> INSERIR TEXTO </p>
+        <ul>
+        <li> Assertive communication. </li>    
+        <li> Teamwork. </li>
+        <li> Always learning from every expericene. </li>
+        <li> Always thinking about UX and UI. </li>
+        </ul>
         <h4>Hard Skills</h4>
-        <p> INCLUIR AS HARD SKILSS </p>
+        <ul>
+            <li> High proficiency in English. </li>
+            <li> Multiple programing languages. </li>
+            <li> Some understanding of design. </li>
+        </ul>
     </div>
 
     <div class="aboutSlide">
         <h3>My Roadmap</h3>
-        <p> INCLUIR O ROADMAP AQUI </p>
+        <p> In nowdays, I'm focused on <strong> web development </strong>, but I'm going to learn more about <strong> mobile development and design </strong>. I'm looking forward to espand my knowledge in <strong> Database and Cloud Computing </strong>. </p>
     </div>
 
 </div>
@@ -111,6 +120,19 @@
     </div>
 </a>
 </div>
-    <script src="main.js"></script>
+</div>
+<div id="toolModal" class="toolModal">
+  <div class="toolModalCard">
+
+    <button id="toolClose" class="backBtn">⨉</button>
+
+    <h2 id="toolTitle"></h2>
+    <p id="toolDesc"></p>
+
+    <h3>How I use it:</h3>
+    <ul id="toolUses"></ul>
+
+  </div>
+    <script src="index.js"></script>
 </body>
 </html>

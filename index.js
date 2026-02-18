@@ -71,4 +71,77 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showSlide(0);
 
+const toolCards = document.querySelectorAll(".toolCard");
+const modal = document.getElementById("toolModal");
+const modalTitle = document.getElementById("toolTitle");
+const modalDesc = document.getElementById("toolDesc");
+const modalUses = document.getElementById("toolUses");
+const modalClose = document.getElementById("toolClose");
+
+const toolData = {
+java: {
+title: "Java",
+desc: "Object-oriented language focused on structure and scalability.",
+uses: [
+"Backend logic",
+"Strong typing practice",
+"OOP patterns"
+]},
+
+html: {
+title: "HTML",
+desc: "Structure layer of every web interface.",
+uses: [
+"Web development",
+"Accessibility",
+"SEO structure"
+]},
+
+css: {
+title: "CSS",
+desc: "Style layer of every web interface.",
+uses: [
+"Layouts",
+"Visual identity",
+"Responsive design",
+"Animations"
+]},
+
+js: {
+title: "JavaScript",
+desc: "Behavior layer of every web interface.",
+uses: [
+"Interactivity",
+"Dynamic content",
+"UI logic",
+"Events"
+]}
+};
+
+toolCards.forEach(card => {
+card.addEventListener("click", () => {
+
+const key = card.dataset.tool;
+const data = toolData[key];
+if (!data) return;
+
+modal.className = "toolModal active " + key;
+
+modalTitle.textContent = data.title;
+modalDesc.textContent = data.desc;
+
+modalUses.innerHTML = "";
+
+data.uses.forEach(u => {
+const li = document.createElement("li");
+li.textContent = u;
+modalUses.appendChild(li);
+});
+
+});
+});
+
+modalClose.addEventListener("click", () => {
+modal.className = "toolModal";
+});
 });
